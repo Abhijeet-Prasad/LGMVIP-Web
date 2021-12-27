@@ -1,0 +1,904 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+    --font-family: "Roboto", sans-serf;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-color: #fcfcfc;
+    --primary-color: #4756df;
+    --secondary-color: #ff7235;
+    --primary-shadow: #8b8eaf;
+    --secondary-shadow: #a17a69;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+}
+/* Variables end */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+
+section{
+    margin: auto;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+section h1{
+    font-size: 3rem;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    letter-spacing: 0.05rem;
+}
+
+header{
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav {
+    top: 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+}
+
+nav h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+nav a {
+    color: white;
+    transition: var(--transition);
+}
+nav a:hover {
+    color: rgb(255, 217, 0);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.9rem;
+}
+
+nav ul li {
+    font-weight: var(--bold-font);
+}
+
+header nav{
+    position: relative;
+}
+
+#home{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #73bcf3;
+}
+  
+#home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(3, 94, 251, 0.192);
+    width: 100%;
+    height: 80vh;
+    top: 0;
+    left: 0;
+}
+  
+#home .home-content{
+    z-index: 888;
+    text-align: left;
+    color: #fff;
+    width: 82%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10px;
+    display: none;
+}
+  
+#home .home-content.active{
+    display: block;
+}
+  
+#home .home-content h1{
+    font-size: 2.5em;
+    font-weight: 900;
+    width: 55%;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+  
+#home .home-content p{
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    width: 55%;
+}
+  
+#home .home-content a{
+    background: rgb(239, 241, 64);
+    padding: 10px 25px;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+#home .home-content a:hover{
+    background-color: rgb(118, 17, 212);
+    color: white;
+}
+  
+#home img{
+    z-index: 000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    margin: auto;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+}
+  
+.slider-navigation .nav-btn{
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.15s ease;
+}
+  
+.slider-navigation .nav-btn.active{
+    background: #2696E9;
+}
+  
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+  
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+  
+.img-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+  
+.img-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 0.8s ease;
+    transition-property: clip-path;
+}
+
+#about-us .top-content{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#about-us .top-content p{
+    width: 50%;
+    margin-right: 40px;
+    font-size: 1.9em;
+    text-align: left;
+    color: rgb(90, 90, 90);
+}
+
+.umbrella{
+    height: 10rem;
+    opacity: 0.5;
+}
+
+#about-us .bottom-content{
+    width: 70%;
+    display: flex;
+    margin: auto;
+}
+
+#about-us .bottom-content .icon{
+    width: 65px;
+    height: 65px;
+    border-radius: 33px;
+    background-color: indigo;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.bottom-content .icon i{
+    color: white;
+    margin: auto;
+    font-size: 1.7rem;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#about-us .bottom-content .tab{
+    width: 20%;
+    margin: auto;
+}
+
+.tab h4{
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.tab p{
+    font-size: 1rem;
+    line-height: 25px;
+    margin-bottom: 25px;
+    color: rgb(100, 100, 100);
+}
+
+.tab a{
+    background: rgb(250, 232, 72);
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color : black;
+}
+
+.tab a:hover{
+    background-color: blueviolet;
+    color: white;
+}
+
+
+/* ----------------------------------------Project CSS---------------------------------------- */
+
+#projects{
+    margin-bottom: 10px;
+}
+
+#projects h1{
+    margin-bottom: 10px;
+}
+
+#content-wrapper{
+    width: 100%;
+    margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.column{
+	padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.project{
+    background-color: rgb(220, 220, 220);
+    margin: 30px;
+	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+    transition: all .5s 0s ease;
+}
+
+.project:hover{
+    background-color: rgb(253, 206, 52);
+    transform: scale(1.05);
+}
+
+.project:hover a{
+    background-color: rgb(184, 41, 184);
+    color: white;
+}
+
+.project-details{
+    padding:0 24px 30px 24px;
+    text-align: left;
+}
+
+.project-details h4{
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.project-details p{
+	font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.project-details a{
+    font-size: 0.7rem;
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.project-details a:hover{
+    background-color: rgb(134, 0, 134);
+    color: white;
+}
+
+.thumbnail{
+	object-fit: cover;
+	width: 330px;
+	height: 280px;
+	cursor: pointer;
+	margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+
+}
+
+#project-wrapper, #video-wrapper{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#project-slider, #video-slider{
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.arrow{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.arrow:hover{
+	opacity: .5;
+	width: 35px;
+	height: 35px;
+}
+
+
+/* ---------------------------------------- Pricing CSS ---------------------------------------- */
+
+#pricing{
+    margin-bottom: 80px;
+}
+
+.pricing-plans{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+  
+.plan{
+	width: 260px;
+	text-align: center;
+	padding: 30px 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: #f6f6f6;
+	box-shadow: 0 0.6rem 1.6rem #b3b5c6;
+	transition: all .5s 0s ease;
+}
+
+.plan .plan-heading{
+	margin-bottom: 20px;
+}
+  
+.plan .plan-price{
+	font-size: 2rem;
+}
+  
+.plan .dollar{
+	font-size: 2rem;
+	font-weight: 400;
+	vertical-align: middle;
+}
+  
+.plan .plan-features .plan-item{
+	padding: 15px 0;
+	border-bottom: 1px solid  #b3b5c6;
+}
+  
+.plan .btn{
+	display: block;
+	background-color: #696fdd;
+	padding: 10px;
+	margin-top: 20px;
+	color: #f6f6fe;
+	border-radius: 5px;
+}
+  
+.plan .btn:hover{
+  background-color: #f6f6fe;
+  color: #494c5f;
+  border: 1px solid #696fdd;
+}
+  
+.plan .btn-blue{
+	background-color: #f6f6fe;
+	color: #696fdd;
+}
+  
+.plan .btn-blue:hover{
+	background-color: #696fdd;
+	color: #f6f6fe;
+	border: 1px solid #f6f6fe;
+}
+
+.plan:hover{
+	background-color: #696fdd;
+	color: #f6f6fe;
+	transform: scale(1.05);
+}
+
+.plan:hover .btn{
+	background-color: #f6f6fe;
+  	color: #494c5f;
+  	border: 1px solid #696fdd;
+}
+
+.plan:hover .btn:hover{
+	background-color: #d6cb36;
+	color: #030303;
+	border: 1px solid #f6f6fe;
+}
+
+
+/* ---------------------------------------- Video Projects CSS ---------------------------------------- */
+
+#video-projects{
+    background-color: rgb(151, 3, 151);
+    padding-bottom: 40px;
+}
+
+#video-projects h1{
+    color: white;
+    padding-top: 40px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.video{
+    margin: 20px;
+}
+
+.video-details{
+    padding:0 5px 0 5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.video-details p{
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: white;
+}
+
+
+/* ---------------------------------------- Zippy Team CSS ---------------------------------------- */
+
+.member{
+    margin: auto;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.member img{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.member h4{
+    margin-bottom: 8px;
+}
+
+.member p{
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgb(129, 129, 129);
+}
+
+.overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #d104a57c;
+    text-align: center;
+
+}
+  
+.member:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i{
+    color: white;
+    font-size: 30px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.overlay i:not(:last-child){
+    margin-right: 10px;
+}
+
+#team .rows{
+    width: 60%;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+
+/* ---------------------------------------- Life in Zippy ---------------------------------------- */
+
+#zippy-life{
+    background-color: rgb(220, 220, 220);
+    padding: 20px 0 80px 0;
+    margin-bottom: 0;
+
+}
+
+.content-wrapper{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+#featured{
+    width: 70%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.office-thumbnail{
+	object-fit: cover;
+	width: 120px;
+	cursor: pointer;
+	opacity: 0.5;
+	margin: 10px;
+}
+
+.office-thumbnail:hover{
+	opacity:1;
+}
+
+.active{
+	opacity: 1;
+}
+
+#slide-wrapper{
+    width: 85%;
+    margin: auto;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+#slider{
+	width: 75%;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+/* ---------------------------------------- Newsletter CSS ---------------------------------------- */
+
+#newsletter{
+	background-image: linear-gradient(rgba(155, 155, 155, 0.3), rgba(155, 155, 155, 0.3)),url("../media/images/205889.jpg");
+	max-width: 100%;
+	height: 50vh;
+	background-position: bottom;
+	background-size: cover;
+}
+
+#newsletter h1{
+	color: white;
+    padding-top: 30px;
+}
+
+.signup-form{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+    padding-top: 20px;
+	margin: auto;
+}
+
+.signup-form .email-box{
+	width: 22rem;
+	height: 2.5rem;
+	font-size: 1rem;
+	padding: 5px 8px 5px 8px;
+	border-radius: 6px 0 0 6px;
+	border: 1px solid #ced4da;
+    border-right: 0;
+    outline: none;
+}
+
+.signup-form .signupBtn{
+	width: 100px;
+	height: 2.5rem;
+	font-weight: bold;
+	background-color: rgb(255, 206, 101);
+	border: none;
+	border-radius: 0 6px 6px 0;
+	padding: 5px 8px 5px 8px;
+}
+
+.signup-form .signupBtn:hover{
+    color: white;
+    background-color: rgb(150, 0, 150);
+}
+
+
+/* ---------------------------------------- Blogs CSS ---------------------------------------- */
+#blog{
+    margin-bottom: 80px;
+}
+
+.blogs-container{
+	display: flex;
+	justify-content: center;
+	width: 75%;
+	margin: auto;
+}
+
+.blog{
+	width: 20%;
+	margin: auto;
+	justify-content: center;
+	text-align: center;
+}
+
+.blog img{
+	width: 200px;
+	height: 120px;
+    border-radius: 5px;
+}
+
+.blog h4{
+	width: 200px;
+	margin: 10px auto 10px auto;
+	letter-spacing: 0.05rem;
+    line-height: 1.5rem;
+}
+
+.blog span{
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: gray;
+}
+
+.blog p{
+	margin-top: 10px;
+    font-size: 0.9rem;
+	margin-bottom: 25px;
+	line-height: 1.4rem;
+}
+
+.blog a{
+	font-size: 0.8rem;
+	text-decoration: none;
+	background-color: rgb(255, 228, 72);
+	color: black;
+	padding: 11px 20px 11px 20px;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.blog a:hover{
+	background-color: rgb(129, 0, 168);
+	color: white;
+}
+
+
+/* ---------------------------------------- Contact CSS ---------------------------------------- */
+
+#contact{
+	display: flex;
+	margin: 0;
+	margin: auto;
+	height: 95vh;
+    margin-bottom: 50px;
+}
+
+.location{
+	width: 50%;
+	margin: 0;
+	height: 95vh;
+}
+
+.contact-form{
+	text-align: center;
+	width: 50%;
+	background-color: rgb(255, 210, 97);
+}
+
+.contact-form h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form{
+	padding: 0 20% 0 20%;
+}
+
+
+.form-group {
+	text-align: left;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+	margin-bottom: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 5px 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline: none;
+    border-radius: 0.25rem;
+}
+
+
+textarea.form-control {
+    font-family: -apple-system, Arial, sans-serif;
+    height: 130px;
+    resize: none;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.submitBtn {
+	width: 100%;
+	font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+	color: #fff;
+    background-color: #007bff;
+	border: none;
+    padding: 10px 20px;
+    border-radius: 0.25rem;
+}
+
+.submitBtn:hover {
+    background-color: #8200d9;
+    border-color: #8200cc;
+}
+
+
+/* ---------------------------------------- Footer CSS ---------------------------------------- */
+
+footer{
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    padding: 0 20% 0 20%;
+}
+
+.address, .social, .contact-details{
+    width:20%;
+    text-align: center;
+}
+
+.address h4, .social h4, .contact-details h4{
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.address p, .social p, .contact-details p{
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+.social .icons .fab{
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.icons i:not(:last-child){
+    margin-right: 20px;
+}
+
+.icons .fab:hover{
+    transform: scale(1.2);
+}
