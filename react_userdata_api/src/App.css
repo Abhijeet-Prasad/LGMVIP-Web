@@ -1,0 +1,87 @@
+.app{
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+}
+
+.Navbar{
+  height: 10%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0.8rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.315);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  vertical-align: baseline;
+}
+
+.logo{
+  width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar button{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 12px 20px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  vertical-align:middle
+}
+
+.Navbar button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Navbar button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  vertical-align: middle;
+  font-size: 25px;
+  right: -20px;
+  top: -5px;
+  transition: 0.5s;
+}
+
+.Navbar button:hover span {
+  padding-right: 25px;
+}
+
+.Navbar button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.app_user{
+  display: flex;
+  width: 80%;
+  height: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+}
